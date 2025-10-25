@@ -1,12 +1,11 @@
 # Use the official n8n image
 FROM n8nio/n8n:latest
 
-# (Optional) You can set the timezone, otherwise it defaults to UTC
+# Set timezone (optional)
 ENV GENERIC_TIMEZONE="Asia/Karachi"
 
-# Expose the default n8n port
+# Expose the default port
 EXPOSE 5678
 
-# Start n8n
-CMD ["n8n", "start"]
-
+# Start n8n explicitly through shell
+CMD ["sh", "-c", "n8n start"]

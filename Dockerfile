@@ -1,11 +1,12 @@
-# Use the official n8n image
+# Use official n8n image
 FROM n8nio/n8n:latest
 
-# Set timezone (optional)
+# Optional timezone setting
 ENV GENERIC_TIMEZONE="Asia/Karachi"
 
-# Expose the default n8n port
+# Expose port
 EXPOSE 5678
 
-# Start n8n explicitly through shell
-CMD ["sh", "-c", "n8n start"]
+# Run n8n directly
+ENTRYPOINT ["n8n"]
+CMD ["start"]
